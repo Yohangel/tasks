@@ -1,0 +1,31 @@
+name: Deployment Configuration
+
+# This file contains deployment-specific configurations and is used by the CI/CD pipeline
+# It's separate from the main workflow file to allow for easier management of environment-specific settings
+
+# Environment variables are managed through GitHub Secrets and passed to the deployment environment
+# Required secrets for deployment:
+# - DATABASE_URL: Connection string for the production database
+# - JWT_SECRET: Secret key for JWT token generation
+# - JWT_EXPIRATION: Expiration time for JWT tokens in seconds
+# - RAILWAY_TOKEN: API token for Railway deployment
+# - PORT: Port for the application to listen on (default: 3000)
+
+# Deployment environments:
+# - production: Main production environment
+# - staging: Staging environment for testing before production
+
+# Deployment targets:
+# - Railway: Main deployment target
+# - Render: Alternative deployment target (configuration commented out)
+# - Heroku: Alternative deployment target (configuration commented out)
+
+# To add a new deployment target:
+# 1. Add the necessary secrets to GitHub repository settings
+# 2. Uncomment or add the relevant deployment steps in ci-cd.yml
+# 3. Update this file with any additional configuration needed
+
+# To add a new environment:
+# 1. Create a new environment in GitHub repository settings
+# 2. Add the necessary secrets to the environment
+# 3. Update the ci-cd.yml file to include the new environment

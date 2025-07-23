@@ -1,102 +1,192 @@
-# Bify Backend
+# Task Management System
 
-> **Nota:** Toda la documentación interna, requerimientos, arquitectura, decisiones y seguimiento de desarrollo se encuentra en la carpeta `.ia_docs`.
+A comprehensive task management system backend built with NestJS and Fastify. The system provides user authentication, user management, and task management capabilities with advanced features like filtering, pagination, and search.
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This project is a RESTful API built with [NestJS](https://github.com/nestjs/nest) framework, using Fastify as the HTTP adapter and Prisma ORM for database operations. It includes comprehensive authentication, task management, and API documentation features.
 
 ## Project setup
 
+### Using Docker (Recommended)
+
+The easiest way to set up and run the project is using Docker:
+
 ```bash
-$ yarn install
+# Copy the example environment file
+$ cp .env.example .env
+
+# Start the application and database with Docker Compose
+$ docker-compose up -d
+
+# Run database migrations
+$ docker-compose exec api npm run db:migrate
+
+# Seed the database with initial data
+$ docker-compose exec api npm run db:seed
 ```
 
-## Compile and run the project
+The API will be available at http://localhost:3000 and the Swagger documentation at http://localhost:3000/api/docs
+
+### Manual Setup
+
+If you prefer to run the project without Docker:
+
+```bash
+# Install dependencies
+$ npm install
+
+# Set up environment variables
+$ cp .env.example .env
+# Edit .env file to use your local PostgreSQL instance
+
+# Generate Prisma client
+$ npm run db:generate
+
+# Run database migrations
+$ npm run db:migrate
+
+# Seed the database with initial data
+$ npm run db:seed
+```
+
+## Running the application
+
+### Using Docker
+
+```bash
+# Start all services
+$ docker-compose up -d
+
+# View logs
+$ docker-compose logs -f api
+
+# Stop all services
+$ docker-compose down
+```
+
+### Manual
 
 ```bash
 # development
-$ yarn run start
+$ npm run start
 
 # watch mode
-$ yarn run start:dev
+$ npm run start:dev
 
 # production mode
-$ yarn run start:prod
+$ npm run start:prod
 ```
 
-## Run tests
+## Running tests
+
+### Using Docker
+
+```bash
+# Run unit tests
+$ docker-compose exec api npm run test
+
+# Run e2e tests
+$ docker-compose exec api npm run test:e2e
+
+# Run test coverage
+$ docker-compose exec api npm run test:cov
+```
+
+### Manual
 
 ```bash
 # unit tests
-$ yarn run test
+$ npm run test
 
 # e2e tests
-$ yarn run test:e2e
+$ npm run test:e2e
 
 # test coverage
-$ yarn run test:cov
+$ npm run test:cov
 ```
 
-## Deployment
+## Docker Configuration
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+The project includes Docker configuration for both development and production environments:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### Development Environment
 
-```bash
-$ yarn install -g @nestjs/mau
-$ mau deploy
-```
+The `docker-compose.yml` file sets up:
+- A NestJS API container running in development mode with hot-reload
+- A PostgreSQL database container for the main application
+- A separate PostgreSQL database container for testing
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### Production Environment
+
+The `Dockerfile` includes a multi-stage build process:
+1. **Builder stage**: Installs dependencies, generates Prisma client, and builds the application
+2. **Production stage**: Creates a minimal production image with only the necessary files and dependencies
+
+### Environment Variables
+
+Docker configuration uses environment variables defined in:
+- `.env` file (for local development)
+- Environment variables in `docker-compose.yml` (for containerized development)
+- Environment variables passed to the container at runtime (for production)
+
+## API Documentation
+
+The API documentation is available through Swagger UI at `/api/docs` when the application is running. It provides:
+- Detailed endpoint descriptions
+- Request and response schemas
+- Authentication information
+- Interactive API testing capabilities
+
+## Features
+
+- User authentication with JWT
+- User profile management
+- Task creation, retrieval, updating, and deletion
+- Advanced task filtering, pagination, and search
+- Comprehensive API documentation
+- Robust error handling and validation
+- Database migrations and seeding
+- Comprehensive test coverage
+- Automated CI/CD pipeline with GitHub Actions
+
+## CI/CD Pipeline
+
+This project uses GitHub Actions for continuous integration and deployment:
+
+### Workflow Stages
+
+1. **Lint**: Runs ESLint and Prettier checks to ensure code quality
+2. **Test**: Runs unit tests, integration tests, and e2e tests with coverage reporting
+3. **Build**: Builds the application and generates artifacts
+4. **Deploy**: Deploys the application to the production environment (when merged to main/master)
+
+### Environment Variables
+
+The CI/CD pipeline uses GitHub Secrets for managing environment variables:
+
+- `DATABASE_URL`: Connection string for the database
+- `JWT_SECRET`: Secret key for JWT token generation
+- `JWT_EXPIRATION`: Expiration time for JWT tokens
+- `RAILWAY_TOKEN`: API token for Railway deployment
+
+### Deployment
+
+The application is automatically deployed to Railway when changes are merged to the main/master branch.
 
 ## Resources
 
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- [NestJS Documentation](https://docs.nestjs.com)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [Fastify Documentation](https://www.fastify.io/docs/latest)
+- [Docker Documentation](https://docs.docker.com)
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [Railway Documentation](https://docs.railway.app)
 
 ## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+This project is [MIT licensed](LICENSE).

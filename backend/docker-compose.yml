@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: task-management-api
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/taskmanagement?schema=public
+      - JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+      - JWT_EXPIRES_IN=1h
+      - PORT=3000
+      - NODE_ENV=development
+      - CORS_ORIGIN=http://localhost:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "npm run db:generate && npm run start:dev"
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: task-management-postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=taskmanagement
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  postgres_test:
+    image: postgres:15-alpine
+    container_name: task-management-postgres-test
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test_db
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

@@ -1,26 +1,89 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 255 255 255;
+  --foreground: 23 23 23;
+  
+  --primary: 14 165 233;
+  --primary-foreground: 240 249 255;
+  
+  --secondary: 139 92 246;
+  --secondary-foreground: 245 243 255;
+  
+  --muted: 240 240 240;
+  --muted-foreground: 115 115 115;
+  
+  --accent: 245 245 245;
+  --accent-foreground: 23 23 23;
+  
+  --card: 255 255 255;
+  --card-foreground: 23 23 23;
+  
+  --border: 229 229 229;
+  --input: 229 229 229;
+  
+  --success: 34 197 94;
+  --warning: 234 179 8;
+  --error: 239 68 68;
+  --info: 59 130 246;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: 10 10 10;
+  --foreground: 237 237 237;
+  
+  --primary: 14 165 233;
+  --primary-foreground: 240 249 255;
+  
+  --secondary: 139 92 246;
+  --secondary-foreground: 245 243 255;
+  
+  --muted: 38 38 38;
+  --muted-foreground: 163 163 163;
+  
+  --accent: 38 38 38;
+  --accent-foreground: 237 237 237;
+  
+  --card: 24 24 24;
+  --card-foreground: 237 237 237;
+  
+  --border: 38 38 38;
+  --input: 38 38 38;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glassmorphism {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-glass;
+  }
+  
+  .dark .glassmorphism {
+    @apply bg-black/25 border-white/5;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    @apply animate-fade-in;
+  }
+  
+  .slide-up {
+    @apply animate-slide-up;
+  }
+  
+  .slide-down {
+    @apply animate-slide-down;
+  }
 }
