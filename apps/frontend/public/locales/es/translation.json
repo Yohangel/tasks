@@ -1,0 +1,167 @@
+{
+  "app": {
+    "name": "Gestor de Tareas",
+    "description": "Gestiona tus tareas de manera eficiente"
+  },
+  "common": {
+    "dashboard": "Panel de control",
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "error": "Error",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "loading": "Cargando...",
+    "noResults": "No se encontraron resultados",
+    "welcomeMessage": "Bienvenido a tu panel de gestión de tareas",
+    "appDescription": "Una aplicación moderna para gestionar tus tareas de manera eficiente.",
+    "createdAt": "Fecha de creación",
+    "updatedAt": "Última actualización",
+    "skipToContent": "Saltar al contenido principal",
+    "allRightsReserved": "Todos los derechos reservados",
+    "toggleSidebar": "Alternar barra lateral",
+    "toggleLanguage": "Cambiar idioma",
+    "closeSidebar": "Cerrar barra lateral",
+    "tasks": "Tareas",
+    "toggleTheme": "Cambiar tema",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "help": "Ayuda",
+    "tasksSummary": "Gestiona y haz seguimiento de tus tareas",
+    "profileSummary": "Ver y editar tu información de perfil",
+    "settingsSummary": "Personaliza la configuración de tu aplicación",
+    "viewTasks": "Ver Tareas",
+    "editProfile": "Editar Perfil",
+    "manageSettings": "Administrar Configuración"
+  },
+  "features": {
+    "organize": {
+      "title": "Organiza tus tareas",
+      "description": "Crea, edita y organiza tus tareas con facilidad."
+    },
+    "track": {
+      "title": "Seguimiento de progreso",
+      "description": "Visualiza tu progreso y mantén el control de tus proyectos."
+    },
+    "collaborate": {
+      "title": "Colaboración",
+      "description": "Comparte tareas y colabora con tu equipo de manera eficiente."
+    }
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "name": "Nombre",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "dontHaveAccount": "¿No tienes una cuenta?",
+    "loginSuccess": "Inicio de sesión exitoso",
+    "registerSuccess": "Registro exitoso",
+    "logoutSuccess": "Cierre de sesión exitoso",
+    "invalidCredentials": "Credenciales inválidas",
+    "passwordsDontMatch": "Las contraseñas no coinciden",
+    "emailRequired": "El correo electrónico es obligatorio",
+    "passwordRequired": "La contraseña es obligatoria",
+    "nameRequired": "El nombre es obligatorio",
+    "invalidEmail": "Correo electrónico inválido"
+  },
+  "tasks": {
+    "title": "Título",
+    "description": "Descripción",
+    "dueDate": "Fecha de vencimiento",
+    "priority": "Prioridad",
+    "status": {
+      "title": "Estado",
+      "todo": "Por hacer",
+      "inProgress": "En progreso",
+      "done": "Completado",
+      "pending": "Pendiente",
+      "completed": "Completada",
+      "cancelled": "Cancelada"
+    },
+    "create": "Crear tarea",
+    "edit": "Editar tarea",
+    "delete": "Eliminar tarea",
+    "deleteConfirmation": "¿Estás seguro de que deseas eliminar esta tarea?",
+    "createSuccess": "Tarea creada exitosamente",
+    "updateSuccess": "Tarea actualizada exitosamente",
+    "deleteSuccess": "Tarea eliminada exitosamente",
+    "titleRequired": "El título es obligatorio",
+    "descriptionRequired": "La descripción es obligatoria",
+    "dueDateRequired": "La fecha de vencimiento es obligatoria",
+    "priorityRequired": "La prioridad es obligatoria",
+    "statusRequired": "El estado es obligatorio",
+    "priority": {
+      "low": "Baja",
+      "medium": "Media",
+      "high": "Alta"
+    },
+    "filters": {
+      "all": "Todas",
+      "todo": "Por hacer",
+      "inProgress": "En progreso",
+      "done": "Completadas",
+      "search": "Buscar tareas..."
+    },
+    "sort": {
+      "title": "Ordenar por",
+      "dueDate": "Fecha de vencimiento",
+      "priority": "Prioridad",
+      "status": "Estado"
+    },
+    "noTasks": "No hay tareas disponibles",
+    "addTask": "Agregar tarea",
+    "empty": "No se encontraron tareas",
+    "confirmDelete": "¿Estás seguro de que quieres eliminar esta tarea?"
+  },
+  "profile": {
+    "title": "Perfil",
+    "personalInfo": "Información personal",
+    "updateProfile": "Actualizar perfil",
+    "updatePassword": "Actualizar contraseña",
+    "currentPassword": "Contraseña actual",
+    "newPassword": "Nueva contraseña",
+    "confirmNewPassword": "Confirmar nueva contraseña",
+    "updateSuccess": "Perfil actualizado exitosamente",
+    "passwordUpdateSuccess": "Contraseña actualizada exitosamente",
+    "incorrectPassword": "Contraseña actual incorrecta",
+    "createdAt": "Fecha de creación de la cuenta",
+    "edit": "Editar Perfil"
+  },
+  "settings": {
+    "title": "Configuración",
+    "theme": {
+      "title": "Tema",
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema"
+    },
+    "language": {
+      "title": "Idioma",
+      "en": "Inglés",
+      "es": "Español"
+    }
+  },
+  "errors": {
+    "somethingWentWrong": "Algo salió mal",
+    "pageNotFound": "Página no encontrada",
+    "unauthorized": "No autorizado",
+    "forbidden": "Acceso denegado",
+    "networkError": "Error de red",
+    "serverError": "Error del servidor",
+    "offline": "Sin conexión a Internet",
+    "tryAgain": "Intentar de nuevo"
+  }
+}

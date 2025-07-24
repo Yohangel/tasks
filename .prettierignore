@@ -1,0 +1,10 @@
+node_modules
+dist
+.next
+coverage
+*.lock
+*.log
+.env*
+.DS_Store
+*.min.js
+*.min.css

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Globe</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle stroke="currentColor" stroke-width="2" cx="12" cy="12" r="10"></circle>
+        <path d="M12,2 C12,2 16,6 16,12 C16,18 12,22 12,22" stroke="currentColor" stroke-width="2"></path>
+        <path d="M12,2 C12,2 8,6 8,12 C8,18 12,22 12,22" stroke="currentColor" stroke-width="2"></path>
+        <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"></line>
+    </g>
+</svg>

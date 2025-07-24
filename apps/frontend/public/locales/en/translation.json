@@ -1,0 +1,167 @@
+{
+  "app": {
+    "name": "Task Manager",
+    "description": "Manage your tasks efficiently"
+  },
+  "common": {
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "welcomeMessage": "Welcome to your task management dashboard",
+    "appDescription": "A modern application to efficiently manage your tasks.",
+    "createdAt": "Created at",
+    "updatedAt": "Last updated",
+    "skipToContent": "Skip to main content",
+    "allRightsReserved": "All rights reserved",
+    "toggleSidebar": "Toggle sidebar",
+    "toggleLanguage": "Change language",
+    "closeSidebar": "Close sidebar",
+    "tasks": "Tasks",
+    "toggleTheme": "Toggle theme",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "help": "Help",
+    "tasksSummary": "Manage and track your tasks",
+    "profileSummary": "View and edit your profile information",
+    "settingsSummary": "Customize your application settings",
+    "viewTasks": "View Tasks",
+    "editProfile": "Edit Profile",
+    "manageSettings": "Manage Settings"
+  },
+  "features": {
+    "organize": {
+      "title": "Organize your tasks",
+      "description": "Create, edit, and organize your tasks with ease."
+    },
+    "track": {
+      "title": "Track progress",
+      "description": "Visualize your progress and keep control of your projects."
+    },
+    "collaborate": {
+      "title": "Collaboration",
+      "description": "Share tasks and collaborate with your team efficiently."
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "forgotPassword": "Forgot your password?",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "loginSuccess": "Login successful",
+    "registerSuccess": "Registration successful",
+    "logoutSuccess": "Logout successful",
+    "invalidCredentials": "Invalid credentials",
+    "passwordsDontMatch": "Passwords don't match",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "nameRequired": "Name is required",
+    "invalidEmail": "Invalid email"
+  },
+  "tasks": {
+    "title": "Title",
+    "description": "Description",
+    "dueDate": "Due Date",
+    "priority": "Priority",
+    "status": {
+      "title": "Status",
+      "todo": "To Do",
+      "inProgress": "In Progress",
+      "done": "Done",
+      "pending": "Pending",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "create": "Create Task",
+    "edit": "Edit Task",
+    "delete": "Delete Task",
+    "deleteConfirmation": "Are you sure you want to delete this task?",
+    "createSuccess": "Task created successfully",
+    "updateSuccess": "Task updated successfully",
+    "deleteSuccess": "Task deleted successfully",
+    "titleRequired": "Title is required",
+    "descriptionRequired": "Description is required",
+    "dueDateRequired": "Due date is required",
+    "priorityRequired": "Priority is required",
+    "statusRequired": "Status is required",
+    "priority": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "filters": {
+      "all": "All",
+      "todo": "To Do",
+      "inProgress": "In Progress",
+      "done": "Done",
+      "search": "Search tasks..."
+    },
+    "sort": {
+      "title": "Sort by",
+      "dueDate": "Due Date",
+      "priority": "Priority",
+      "status": "Status"
+    },
+    "noTasks": "No tasks available",
+    "addTask": "Add Task",
+    "empty": "No tasks found",
+    "confirmDelete": "Are you sure you want to delete this task?"
+  },
+  "profile": {
+    "title": "Profile",
+    "personalInfo": "Personal Information",
+    "updateProfile": "Update Profile",
+    "updatePassword": "Update Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password",
+    "updateSuccess": "Profile updated successfully",
+    "passwordUpdateSuccess": "Password updated successfully",
+    "incorrectPassword": "Current password is incorrect",
+    "createdAt": "Account created at",
+    "edit": "Edit Profile"
+  },
+  "settings": {
+    "title": "Settings",
+    "theme": {
+      "title": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "language": {
+      "title": "Language",
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+  "errors": {
+    "somethingWentWrong": "Something went wrong",
+    "pageNotFound": "Page not found",
+    "unauthorized": "Unauthorized",
+    "forbidden": "Access denied",
+    "networkError": "Network error",
+    "serverError": "Server error",
+    "offline": "You are offline",
+    "tryAgain": "Try again"
+  }
+}

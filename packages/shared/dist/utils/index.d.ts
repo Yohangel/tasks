@@ -1,0 +1,20 @@
+import { TaskStatus, PaginationMeta } from '../types';
+export declare const getTaskStatusLabel: (status: TaskStatus) => string;
+export declare const getTaskStatusColor: (status: TaskStatus) => string;
+export declare const isValidTaskStatus: (status: string) => status is TaskStatus;
+export declare const calculatePagination: (page: number, limit: number, total: number) => PaginationMeta;
+export declare const calculateOffset: (page: number, limit: number) => number;
+export declare const isValidEmail: (email: string) => boolean;
+export declare const isValidPassword: (password: string) => boolean;
+export declare const truncateText: (text: string, maxLength: number) => string;
+export declare const capitalizeFirst: (text: string) => string;
+export declare const slugify: (text: string) => string;
+export declare const formatDate: (date: Date | string) => string;
+export declare const formatDateTime: (date: Date | string) => string;
+export declare const getRelativeTime: (date: Date | string) => string;
+export declare const omit: <T extends Record<string, unknown>, K extends keyof T>(obj: T, keys: K[]) => Omit<T, K>;
+export declare const pick: <T extends Record<string, any>, K extends keyof T>(obj: T, keys: K[]) => Pick<T, K>;
+export declare const groupBy: <T>(array: T[], keyFn: (item: T) => string) => Record<string, T[]>;
+export declare const unique: <T>(array: T[]) => T[];
+export declare const sortBy: <T>(array: T[], keyFn: (item: T) => string | number, order?: "asc" | "desc") => T[];
+//# sourceMappingURL=index.d.ts.map
