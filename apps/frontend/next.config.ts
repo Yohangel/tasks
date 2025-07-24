@@ -9,7 +9,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'api.taskmanagement.com'],
+    domains: ['localhost', 'api.yohangel.com/tasks'],
     formats: ['image/avif', 'image/webp'],
   },
   // App Router includes internationalization by default

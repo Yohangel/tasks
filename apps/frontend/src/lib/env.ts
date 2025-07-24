@@ -6,7 +6,7 @@
 
 export const env = {
   // API Configuration
-  apiUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api',
+  apiUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001',
   apiTimeout: Number(process.env.NEXT_PUBLIC_API_TIMEOUT || 10000),
   
   // Feature Flags

@@ -97,7 +97,7 @@ async function bootstrap() {
       'MIT',
       'https://opensource.org/licenses/MIT'
     )
-    .addServer('http://localhost:3000', 'Development server')
+    .addServer('http://localhost:3001', 'Development server')
     .addServer('http://localhost:3001', 'Alternative development server')
     .addBearerAuth(
       {
@@ -152,7 +152,7 @@ async function bootstrap() {
   });
 
   await app.listen(
-    process.env.PORT ? Number(process.env.PORT) : 3000,
+    process.env.PORT ? Number(process.env.PORT) : 3001,
     '0.0.0.0',
   );
 }

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://taskmanagement.com"),
+  metadataBase: new URL("https://yohangel.com/tasks"),
   alternates: {
     canonical: "/",
     languages: {
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Task Management App",
     description: "A modern task management application with powerful features for organizing your tasks",
-    url: "https://taskmanagement.com",
+    url: "https://yohangel.com/tasks",
     siteName: "Task Management App",
     images: [
       {
-        url: "https://taskmanagement.com/og-image.png",
+        url: "https://yohangel.com/tasks/og-image.png",
         width: 1200,
         height: 630,
         alt: "Task Management App",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Task Management App",
     description: "A modern task management application with powerful features for organizing your tasks",
-    images: ["https://taskmanagement.com/twitter-image.png"],
+    images: ["https://yohangel.com/tasks/twitter-image.png"],
   },
   robots: {
     index: true,
@@ -87,7 +87,7 @@ export default function RootLayout({
         {/* Preconnect to API domain */}
         <link
           rel="preconnect"
-          href="https://api.taskmanagement.com"
+          href="https://yohangel.com/tasks/api"
           crossOrigin="anonymous"
         />
       </head>
